@@ -1,1 +1,1 @@
-# AriadnaGame
+# Game Ariadna
