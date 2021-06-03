@@ -11,12 +11,14 @@ public class InkTestingScript : MonoBehaviour
     public Text text;
     public Text textPrefab;
     public Button buttonPrefab;
+    public Image image;
+    public Sprite sprite1;
+    public Sprite sprite2;
 
     // Start is called before the first frame update
     void Start()
     {
         story = new Story(inkJSON.text);
-
         refreshUI();
 
     }
@@ -24,29 +26,24 @@ public class InkTestingScript : MonoBehaviour
     void refreshUI()
     {
 
+        
         eraseUI();
         text.text = loadStoryChunk();
-        //Text storyText = Instantiate(textPrefab) as Text;
-
-        //string text = loadStoryChunk();
-
-        List<string> tags = story.currentTags;
-
-        //if (tags.Count > 0)
-        //{
-        //    text = "<b>" + tags[0] + "</b> - " + text;
-        //}
-
-        //storyText.text = text;
-        //storyText.transform.SetParent(this.transform, false);
-
+        if (story.currentTags[0] == "image1")
+            image.sprite = sprite1;
+        if (story.currentTags[0] == "image2")
+            image.sprite = sprite2;
         foreach (Choice choice in story.currentChoices)
         {
             Button choiceButton = Instantiate(buttonPrefab) as Button;
-            choiceButton.transform.SetParent(this.transform, false);     
+            choiceButton.transform.SetParent(this.transform , false);     
             Text choiceText = choiceButton.GetComponentInChildren<Text>();
             choiceText.text = choice.text;
-
+            if (story.currentChoices.Count == 1)
+            {
+                this.transform.GetComponent<VerticalLayoutGroup>().enabled = false;
+                choiceButton.transform.localPosition = new Vector2(-350, -1500);
+            }
             choiceButton.onClick.AddListener(delegate {
                 chooseStoryChoice(choice);
             });
@@ -56,7 +53,8 @@ public class InkTestingScript : MonoBehaviour
 
     void eraseUI()
     {
-        for (int i = 1; i < this.transform.childCount; i++)
+        this.transform.GetComponent<VerticalLayoutGroup>().enabled = true;
+        for (int i = 2  ; i < this.transform.childCount; i++)
         {
             Destroy(this.transform.GetChild(i).gameObject);
         }
