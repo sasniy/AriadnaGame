@@ -9,11 +9,12 @@ public class InkTestingScript : MonoBehaviour
     public TextAsset inkJSON;
     private Story story;
     public Text text;
-    public Text textPrefab;
     public Button buttonPrefab;
+    public Image PanelText;
     public Image image;
-    public Sprite sprite1;
-    public Sprite sprite2;
+    public Image PanelButton;
+    public Sprite[] sprites;
+    public int i = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,23 +27,22 @@ public class InkTestingScript : MonoBehaviour
     void refreshUI()
     {
 
-        
+        i += 1;
         eraseUI();
         text.text = loadStoryChunk();
-        if (story.currentTags[0] == "image1")
-            image.sprite = sprite1;
-        if (story.currentTags[0] == "image2")
-            image.sprite = sprite2;
+        if (story.currentTags[0] == story.currentTags[0])
+            image.sprite = sprites[i-1];
         foreach (Choice choice in story.currentChoices)
         {
             Button choiceButton = Instantiate(buttonPrefab) as Button;
-            choiceButton.transform.SetParent(this.transform , false);     
+            choiceButton.transform.SetParent(PanelButton.transform , false);     
             Text choiceText = choiceButton.GetComponentInChildren<Text>();
             choiceText.text = choice.text;
             if (story.currentChoices.Count == 1)
             {
-                this.transform.GetComponent<VerticalLayoutGroup>().enabled = false;
-                choiceButton.transform.localPosition = new Vector2(-350, -1500);
+                //PanelButton.transform.GetComponent<VerticalLayoutGroup>().enabled = false;
+                choiceButton.transform.localPosition = new Vector2(PanelButton.transform.localScale.x-290, PanelButton.transform.localScale.y/2 -70) ;
+
             }
             choiceButton.onClick.AddListener(delegate {
                 chooseStoryChoice(choice);
@@ -53,10 +53,10 @@ public class InkTestingScript : MonoBehaviour
 
     void eraseUI()
     {
-        this.transform.GetComponent<VerticalLayoutGroup>().enabled = true;
-        for (int i = 2  ; i < this.transform.childCount; i++)
+        PanelButton.transform.GetComponent<VerticalLayoutGroup>().enabled = true;
+        for (int i = 0  ; i < PanelButton.transform.childCount; i++)
         {
-            Destroy(this.transform.GetChild(i).gameObject);
+            Destroy(PanelButton.transform.GetChild(i).gameObject);
         }
     }
 
