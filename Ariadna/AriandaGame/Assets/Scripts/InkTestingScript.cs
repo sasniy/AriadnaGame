@@ -14,7 +14,6 @@ public class InkTestingScript : MonoBehaviour
     public Image image;
     public Image PanelButton;
     public Sprite[] sprites;
-    public int i = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,24 +25,27 @@ public class InkTestingScript : MonoBehaviour
 
     void refreshUI()
     {
-
-        i += 1;
         eraseUI();
+
         text.text = loadStoryChunk();
-        if (story.currentTags[0] == story.currentTags[0])
-            image.sprite = sprites[i-1];
+        if (story.currentChoices.Count == 0)
+        {
+            Application.LoadLevel("MainMenu");
+        }
+
+        image.sprite = sprites[int.Parse(story.currentTags[0])-1];
         foreach (Choice choice in story.currentChoices)
         {
             Button choiceButton = Instantiate(buttonPrefab) as Button;
             choiceButton.transform.SetParent(PanelButton.transform , false);     
             Text choiceText = choiceButton.GetComponentInChildren<Text>();
             choiceText.text = choice.text;
-            if (story.currentChoices.Count == 1)
-            {
-                //PanelButton.transform.GetComponent<VerticalLayoutGroup>().enabled = false;
-                choiceButton.transform.localPosition = new Vector2(PanelButton.transform.localScale.x-290, PanelButton.transform.localScale.y/2 -70) ;
+            
+            //if (story.currentChoices.Count == 1)
+            //{
+            //    choiceButton.transform.localPosition = new Vector2(PanelButton.transform.localScale.x-290, PanelButton.transform.localScale.y/2 -70) ;
 
-            }
+            //}
             choiceButton.onClick.AddListener(delegate {
                 chooseStoryChoice(choice);
             });
@@ -73,12 +75,12 @@ public class InkTestingScript : MonoBehaviour
 
     string loadStoryChunk()
     {
-        string text = "";
+        string text = " ";
         if (story.canContinue)
         {
-            text = story.ContinueMaximally();
-        }
+            text= story.ContinueMaximally();
 
+        }  
         return text;
     }
 }
