@@ -357,7 +357,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 2a7c1fbc3b34fa4449ad01294d17185e, type: 3}
   - {fileID: 21300000, guid: 746a8035d7751324eaf55ae0b21dd592, type: 3}
-  - {fileID: 21300000, guid: db3da5557fd25c5408c5daa962b1bee9, type: 3}
+  - {fileID: 21300000, guid: 91db58ee9df75ae44abcd4ad7d4ef817, type: 3}
   - {fileID: 21300000, guid: c4e82588e5c37d94cb403d50d7fc33a2, type: 3}
   - {fileID: 21300000, guid: c4e82588e5c37d94cb403d50d7fc33a2, type: 3}
   - {fileID: 21300000, guid: c4e82588e5c37d94cb403d50d7fc33a2, type: 3}
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6392157}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69411767}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
