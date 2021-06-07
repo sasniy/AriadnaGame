@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class InkTestingScript : MonoBehaviour
 {
+    public static bool FirstAchievement;
     public TextAsset inkJSON;
     private Story story;
     public Text text;

@@ -355,17 +355,10 @@ MonoBehaviour:
   image: {fileID: 305742770}
   PanelButton: {fileID: 1813004344}
   sprites:
-  - {fileID: 21300000, guid: 2a7c1fbc3b34fa4449ad01294d17185e, type: 3}
-  - {fileID: 21300000, guid: 746a8035d7751324eaf55ae0b21dd592, type: 3}
+  - {fileID: 21300000, guid: bf2f5c4db3230ef42ab03a8a82cf7227, type: 3}
   - {fileID: 21300000, guid: 91db58ee9df75ae44abcd4ad7d4ef817, type: 3}
-  - {fileID: 21300000, guid: c4e82588e5c37d94cb403d50d7fc33a2, type: 3}
-  - {fileID: 21300000, guid: c4e82588e5c37d94cb403d50d7fc33a2, type: 3}
-  - {fileID: 21300000, guid: c4e82588e5c37d94cb403d50d7fc33a2, type: 3}
-  - {fileID: 21300000, guid: 2a7c1fbc3b34fa4449ad01294d17185e, type: 3}
-  - {fileID: 21300000, guid: d728d03db34dc8d4faa84f057937fe84, type: 3}
-  - {fileID: 21300000, guid: 404ded360de2f874db1ad01d66d08a4e, type: 3}
-  - {fileID: 21300000, guid: 404ded360de2f874db1ad01d66d08a4e, type: 3}
-  - {fileID: 21300000, guid: 404ded360de2f874db1ad01d66d08a4e, type: 3}
+  - {fileID: 21300000, guid: 2684e056575efcf4db2beed1d6900fb9, type: 3}
+  - {fileID: 21300000, guid: 9a95993533463464bbb96e91ded3ea45, type: 3}
   - {fileID: 21300000, guid: 404ded360de2f874db1ad01d66d08a4e, type: 3}
 --- !u!114 &198989296
 MonoBehaviour:
