@@ -38,4 +38,8 @@ public class LoadLevels : MonoBehaviour
         Application.LoadLevel("Chapter2");
     }
 
+    public void Achievments()
+    {
+        Application.LoadLevel("AchievmentsScene");
+    }
 }
