@@ -19,27 +19,31 @@ public class LoadLevels : MonoBehaviour
 
     public void ChapterSelection()
     {
-        Application.LoadLevel("ChapterSelection");
+        SceneManager.LoadScene("ChapterSelection");
     }
 
     public void MainMenu()
     {
-        Application.LoadLevel("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Chapter1()
     {
-        Application.LoadLevel("Chapter1");
+        SceneManager.LoadScene("Chapter1");
 
     }
 
     public void Chapter2()
     {
-        Application.LoadLevel("Chapter2");
+        SceneManager.LoadScene("Chapter2");
     }
 
     public void Achievments()
     {
-        Application.LoadLevel("AchievmentsScene");
+        SceneManager.LoadScene("AchievmentsScene");
+    }
+    public void TheoryLoad()
+    {
+        SceneManager.LoadScene("Theory");
     }
 }

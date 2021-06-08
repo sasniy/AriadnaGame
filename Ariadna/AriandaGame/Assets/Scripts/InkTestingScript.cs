@@ -1,13 +1,13 @@
 ﻿using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
 public class InkTestingScript : MonoBehaviour
 {
-    public static bool FirstAchievement;
     public TextAsset inkJSON;
     private Story story;
     public Text text;
@@ -32,7 +32,7 @@ public class InkTestingScript : MonoBehaviour
         text.text = loadStoryChunk();
         if (story.currentChoices.Count == 0)
         {
-            Application.LoadLevel("MainMenu");
+            SceneManager.LoadScene("MainMenu");
         }
 
         image.sprite = sprites[int.Parse(story.currentTags[0])-1];
@@ -42,12 +42,6 @@ public class InkTestingScript : MonoBehaviour
             choiceButton.transform.SetParent(PanelButton.transform , false);     
             Text choiceText = choiceButton.GetComponentInChildren<Text>();
             choiceText.text = choice.text;
-            
-            //if (story.currentChoices.Count == 1)
-            //{
-            //    choiceButton.transform.localPosition = new Vector2(PanelButton.transform.localScale.x-290, PanelButton.transform.localScale.y/2 -70) ;
-
-            //}
             choiceButton.onClick.AddListener(delegate {
                 chooseStoryChoice(choice);
             });
@@ -66,6 +60,10 @@ public class InkTestingScript : MonoBehaviour
 
     void chooseStoryChoice(Choice choice)
     {
+        if (choice.text == "Записать их все")
+        {
+            testScript.yes = true;
+        }
         story.ChooseChoiceIndex(choice.index);
         refreshUI();
     }   
