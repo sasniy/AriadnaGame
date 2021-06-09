@@ -16,8 +16,9 @@ public class InkTestingScript : MonoBehaviour
     public Image image;
     public Image PanelButton;
     public Sprite[] sprites;
+    private int count;
+    int result;
 
-    // Start is called before the first frame update
     void Start()
     {
         story = new Story(inkJSON.text);
@@ -28,26 +29,36 @@ public class InkTestingScript : MonoBehaviour
     void refreshUI()
     {
         eraseUI();
-
         text.text = loadStoryChunk();
+        if (int.TryParse(story.currentTags[0],out int result))
+            image.sprite = sprites[int.Parse(story.currentTags[0]) - 1];
+        if (story.currentTags[0] == "BadEnding")
+        {
+            Debug.Log("Corectrl");
+            Save.SaveText("1", "Выполнено");
+        }
         if (story.currentChoices.Count == 0)
         {
+
+           
+            if (story.currentTags[0] == "Ending")
+                Save.SaveText("2", "Выполнено");
             SceneManager.LoadScene("MainMenu");
         }
-
-        image.sprite = sprites[int.Parse(story.currentTags[0])-1];
         foreach (Choice choice in story.currentChoices)
         {
             Button choiceButton = Instantiate(buttonPrefab) as Button;
-            choiceButton.transform.SetParent(PanelButton.transform , false);     
+            choiceButton.transform.SetParent(PanelButton.transform, false);
             Text choiceText = choiceButton.GetComponentInChildren<Text>();
             choiceText.text = choice.text;
-            choiceButton.onClick.AddListener(delegate {
+            choiceButton.onClick.AddListener(delegate
+            {
                 chooseStoryChoice(choice);
+                
             });
+        }
 
-        }   
-    }
+   }
 
     void eraseUI()
     {
@@ -59,11 +70,7 @@ public class InkTestingScript : MonoBehaviour
     }
 
     void chooseStoryChoice(Choice choice)
-    {
-        if (choice.text == "Записать их все")
-        {
-            testScript.yes = true;
-        }
+    { 
         story.ChooseChoiceIndex(choice.index);
         refreshUI();
     }   
@@ -80,7 +87,7 @@ public class InkTestingScript : MonoBehaviour
         {
             text= story.ContinueMaximally();
 
-        }  
+        }          
         return text;
     }
 }

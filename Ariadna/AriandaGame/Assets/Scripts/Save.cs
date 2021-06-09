@@ -8,6 +8,5 @@ public class Save : MonoBehaviour
     {
         PlayerPrefs.SetString(key, text);
         PlayerPrefs.Save();
-        Debug.Log("YEs");
     }    
 }

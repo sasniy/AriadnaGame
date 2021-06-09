@@ -5,19 +5,36 @@ using UnityEngine.UI;
 
 public class AchievementsScript : MonoBehaviour
 {
+    private Color green = new Color(0, 100, 0, 255);
+    private Color yellow = new Color(255, 255, 0, 255);
+    private Color unActive = new Color(30, 30, 30, 255);
+    private Color Active = new Color(255, 255, 255, 255);
     [SerializeField] GameObject[] AchievementsObject;
-    void Start()
-    { 
-        if(testScript.yes)
-        {
-            Save.SaveText("0", "Выполнен");
-            AchievementsObject[0].GetComponentInChildren<Text>().color = new Color(0, 140, 0, 255);
+    public Image[] ImageList;
 
-        }
-        for (int i = 0;i<AchievementsObject.Length;i++)
+    void Start()
+    {
+        for (int i = 0; i < AchievementsObject.Length; i++)
         {
             AchievementsObject[i].GetComponentInChildren<Text>().text = Load.LoadText(i.ToString());
+            if (AchievementsObject[i].GetComponentInChildren<Text>().text== "Выполнено")
+            {
+                AchievementsObject[i].GetComponentInChildren<Text>().color = green;
+                ImageList[i].color = Active;
+            }
+            else
+            {
+                AchievementsObject[i].GetComponentInChildren<Text>().color = yellow;
+                ImageList[i].color = unActive;
+
+            }
+            //AchievementsObject[i].GetComponentInChildren<Text>().fontSize = 50;
         }
+    }
+    private void Update()
+    {
+        
+
     }
     private void OnApplicationQuit()
     {
