@@ -147,7 +147,6 @@ MonoBehaviour:
   - {fileID: 426664123}
   - {fileID: 405461452}
   - {fileID: 480288935}
-  - {fileID: 0}
   ResetPanel: {fileID: 1835312721}
   yesButton: {fileID: 1903785195}
   noButton: {fileID: 880462677}
@@ -2568,7 +2567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac10399f2b285f64b9120d19b9acf3d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bb50fb9f301c18489d88be27713a246, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
