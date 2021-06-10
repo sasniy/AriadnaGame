@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6392157}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9098039}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -358,8 +358,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 76ed2ace28241fb4f9908fe5e2618641, type: 3}
   - {fileID: 21300000, guid: 2e0fccc150e07e946897bd45dee6fcce, type: 3}
   - {fileID: 21300000, guid: 6999c9fbac8765842aee903c490d12b2, type: 3}
-  - {fileID: 21300000, guid: d728d03db34dc8d4faa84f057937fe84, type: 3}
-  - {fileID: 21300000, guid: af74c9586b1263042a2e884b917dd2bd, type: 3}
+  - {fileID: 21300000, guid: 3d4bee91f033ce643bd8b61055e76553, type: 3}
+  - {fileID: 21300000, guid: 3d4bee91f033ce643bd8b61055e76553, type: 3}
   - {fileID: 21300000, guid: af0dcf4774c3e124eb7490b36cdd8115, type: 3}
   - {fileID: 21300000, guid: d521ef7352b688644a0b242e40117b2d, type: 3}
   - {fileID: 21300000, guid: 7d6dc0d7a70d95f499c74cc32bf58f24, type: 3}
@@ -367,7 +367,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2684e056575efcf4db2beed1d6900fb9, type: 3}
   - {fileID: 21300000, guid: 658a67cbf90c1b0468ff436e462e6815, type: 3}
   - {fileID: 21300000, guid: 9aa0a9e655085194d8279334ca1b6371, type: 3}
-  - {fileID: 21300000, guid: 9aa0a9e655085194d8279334ca1b6371, type: 3}
+  - {fileID: 21300000, guid: 7ccbad79805600642b295701790da32d, type: 3}
 --- !u!114 &198989296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9ee0ae71c3c63b649a1d33b1d19c0f9a, type: 3}
     m_FontSize: 50
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 5
     m_MaxSize: 150
@@ -843,7 +843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.090026855, y: -1568}
+  m_AnchoredPosition: {x: -0.090026855, y: -1567.9999}
   m_SizeDelta: {x: 0, y: -1634.8774}
   m_Pivot: {x: 0.5, y: 0.99999994}
 --- !u!114 &1813004342

@@ -7,10 +7,7 @@ public class AchievementsScript : MonoBehaviour
 {
     private Color green = new Color(0, 100, 0, 255);
     private Color yellow = new Color(255, 255, 0, 255);
-    private Color unActive = new Color(30, 30, 30, 255);
-    private Color Active = new Color(255, 255, 255, 255);
     [SerializeField] GameObject[] AchievementsObject;
-    public Image[] ImageList;
 
     void Start()
     {
@@ -20,12 +17,10 @@ public class AchievementsScript : MonoBehaviour
             if (AchievementsObject[i].GetComponentInChildren<Text>().text== "Выполнено")
             {
                 AchievementsObject[i].GetComponentInChildren<Text>().color = green;
-                ImageList[i].color = Active;
             }
             else
             {
                 AchievementsObject[i].GetComponentInChildren<Text>().color = yellow;
-                ImageList[i].color = unActive;
 
             }
             //AchievementsObject[i].GetComponentInChildren<Text>().fontSize = 50;

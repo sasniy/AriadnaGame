@@ -29,21 +29,51 @@ public class InkTestingScript : MonoBehaviour
     void refreshUI()
     {
         eraseUI();
+        Choices.alone = false;
+        Choices.goodEnd = false;
+        Choices.together = false;
+        Choices.badend = false;
+        Choices.normalEnd = false;
         text.text = loadStoryChunk();
         if (int.TryParse(story.currentTags[0],out int result))
             image.sprite = sprites[int.Parse(story.currentTags[0]) - 1];
-        if (story.currentTags[0] == "BadEnding")
-        {
-            Debug.Log("Corectrl");
-            Save.SaveText("1", "Выполнено");
-        }
+       
         if (story.currentChoices.Count == 0)
         {
-
-           
+            if (story.currentTags[0] == "BadEnding")
+            {
+                Save.SaveText("1", "Выполнено");
+                Choices.alone = true;
+            }
             if (story.currentTags[0] == "Ending")
+            {
                 Save.SaveText("2", "Выполнено");
-            SceneManager.LoadScene("MainMenu");
+                Choices.together = true;
+            }
+            if (story.currentTags[0] == "GoodEndWithTheory")
+            {
+                Save.SaveText("0", "Выполнено");
+                Save.SaveText("3", "Выполнено");
+                Save.SaveText("5", "Выполнено");
+                Choices.goodEndWithTheory = true;
+            }
+            if (story.currentTags[0] == "GoodEnd")
+            {
+                Save.SaveText("0", "Выполнено");
+                Save.SaveText("3", "Выполнено");
+                Save.SaveText("5", "Выполнено");
+                Choices.goodEnd = true;
+            }
+            if (story.currentTags[0] == "BadSecondEnd")
+            {
+                Save.SaveText("4", "Выполнено");
+                Choices.badend = true;
+            }
+            if (story.currentTags[0] == "NormalEnd")
+            {
+                Choices.normalEnd = true;
+            }
+            SceneManager.LoadScene("GameOverScene");
         }
         foreach (Choice choice in story.currentChoices)
         {
